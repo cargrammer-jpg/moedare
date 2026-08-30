@@ -5,7 +5,7 @@
  * Leave `url` empty (or omit it) to hide the network.
  * TikTok stays off the page until a URL exists.
  *
- * Domain: moedare.se
+ * Domain: moedare.com
  */
 window.MOEDARE_SOCIALS = [
   { id: "x", label: "X", url: "https://x.com/MOEDARE" },

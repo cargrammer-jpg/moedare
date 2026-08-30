@@ -1,6 +1,6 @@
 # MOEDARE
 
-Private landing for **moedare.se** — ALX / MOEDARE, Sweden.
+Private landing for **moedare.com** — ALX / MOEDARE, Sweden.
 
 This folder **is** the production site. There is no compile step. Open the files, or serve the directory.
 
@@ -22,9 +22,9 @@ Confirmed live: **X**, **Instagram**, **Reddit**, **SoundCloud**, **YouTube**. T
 
 ## Domain
 
-Production domain: **moedare.se**
+Production domain: **moedare.com**
 
-`CNAME` in this folder is already set to `moedare.se`. `.nojekyll` is included so GitHub Pages will not run Jekyll.
+`CNAME` in this folder is already set to `moedare.com`. `.nojekyll` is included so GitHub Pages will not run Jekyll.
 
 Asset paths are relative so the site works at the repository root on GitHub Pages.
 

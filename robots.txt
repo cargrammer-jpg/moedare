@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://moedare.se/sitemap.xml
+Sitemap: https://moedare.com/sitemap.xml
