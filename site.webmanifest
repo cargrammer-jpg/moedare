@@ -1,19 +1,19 @@
 {
   "name": "MOEDARE",
   "short_name": "MOEDARE",
-  "description": "ALX / MOEDARE. Stockholm.",
+  "description": "ALX / MOEDARE. Sweden.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#070706",
-  "theme_color": "#070706",
+  "background_color": "#F3F4F6",
+  "theme_color": "#F3F4F6",
   "icons": [
     {
-      "src": "/favicon.svg",
+      "src": "favicon.svg",
       "type": "image/svg+xml",
       "sizes": "any"
     },
     {
-      "src": "/apple-touch-icon.png",
+      "src": "apple-touch-icon.png",
       "type": "image/png",
       "sizes": "180x180"
     }
