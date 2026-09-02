@@ -150,6 +150,47 @@
     });
   }
 
+
+  function shopHref(asin, tag) {
+    return "https://www.amazon.com/dp/" + encodeURIComponent(asin) + "?tag=" + encodeURIComponent(tag);
+  }
+
+  function renderShop() {
+    var shop = window.MOEDARE_SHOP;
+    var navs = document.querySelectorAll("[data-shop]");
+    if (!navs.length) return;
+    var items = shop && Array.isArray(shop.items) ? shop.items : [];
+    var tag = shop && shop.tag ? shop.tag : "moedare-20";
+    navs.forEach(function (nav) {
+      nav.replaceChildren();
+      items.forEach(function (item) {
+        var a = document.createElement("a");
+        a.className = "product-card";
+        a.href = shopHref(item.asin, tag);
+        a.target = "_blank";
+        a.rel = "nofollow sponsored noopener noreferrer";
+        a.setAttribute("aria-label", item.name + " on Amazon");
+        var mark = (item.brand || "M").trim();
+        var initials = mark.length <= 3 ? mark : mark.split(/\s+/).map(function (w) { return w.charAt(0); }).join("").slice(0, 3);
+        a.innerHTML =
+          '<span class="product-mark" aria-hidden="true">' +
+          initials +
+          "</span>" +
+          '<span class="product-copy">' +
+          '<span class="product-name">' +
+          item.name +
+          "</span>" +
+          '<span class="product-note">' +
+          (item.note || item.brand || "") +
+          "</span>" +
+          "</span>" +
+          EXT_ARROW;
+        nav.appendChild(a);
+      });
+    });
+  }
+
   loadAvatar(document);
   renderSocials();
+  renderShop();
 })();

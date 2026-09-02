@@ -332,7 +332,96 @@ img {
 }
 
 
-/* ——— Coming soon / empty states ——— */
+/* ——— Shop / affiliate shelf ——— */
+
+.shop-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.product-card {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  width: 100%;
+  min-height: 72px;
+  margin: 0;
+  transform: none;
+  min-width: 0;
+  padding: 0.7rem 1.1rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: none;
+  color: var(--ink);
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: border-color var(--ease), box-shadow var(--ease);
+}
+
+.product-card:hover,
+.product-card:focus-visible {
+  border-color: #3F4652;
+  box-shadow: var(--shadow-hover);
+  color: var(--ink);
+}
+
+.product-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 0.55rem;
+  background: #111318;
+  border: 1px solid var(--line);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+}
+
+.product-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.12rem;
+  min-width: 0;
+  flex: 1;
+  text-align: left;
+}
+
+.product-name {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+.product-note {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: var(--muted);
+  line-height: 1.3;
+}
+
+.shop-disclosure {
+  margin: 0.85rem 0 0;
+  font-size: 0.75rem;
+  line-height: 1.45;
+  color: #6B7280;
+}
+
+.product-card:hover .ext-arrow,
+.product-card:focus-visible .ext-arrow {
+  color: var(--ink);
+  transform: translate(2px, -2px);
+}
+
+/* ——— Coming soon / empty states ——— 
 
 .coming-card {
   background: var(--card);
