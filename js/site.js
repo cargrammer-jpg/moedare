@@ -170,12 +170,21 @@
         a.target = "_blank";
         a.rel = "nofollow sponsored noopener noreferrer";
         a.setAttribute("aria-label", item.name + " on Amazon");
-        var mark = (item.brand || "M").trim();
-        var initials = mark.length <= 3 ? mark : mark.split(/\s+/).map(function (w) { return w.charAt(0); }).join("").slice(0, 3);
+        var base = window.MOEDARE_BASE || "";
+        var thumb;
+        if (item.image) {
+          thumb =
+            '<img class="product-photo" src="' +
+            base +
+            item.image +
+            '" alt="" width="48" height="48">';
+        } else {
+          var mark = (item.brand || "M").trim();
+          var initials = mark.length <= 3 ? mark : mark.split(/\s+/).map(function (w) { return w.charAt(0); }).join("").slice(0, 3);
+          thumb = '<span class="product-mark" aria-hidden="true">' + initials + "</span>";
+        }
         a.innerHTML =
-          '<span class="product-mark" aria-hidden="true">' +
-          initials +
-          "</span>" +
+          thumb +
           '<span class="product-copy">' +
           '<span class="product-name">' +
           item.name +

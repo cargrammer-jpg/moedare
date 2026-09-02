@@ -372,8 +372,8 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
   flex-shrink: 0;
   border-radius: 0.55rem;
   background: #111318;
@@ -382,6 +382,17 @@ img {
   font-weight: 700;
   letter-spacing: 0.04em;
   color: var(--ink);
+  overflow: hidden;
+}
+
+.product-photo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  background: #F3F4F6;
+  border-radius: 0.55rem;
+  flex-shrink: 0;
+  display: block;
 }
 
 .product-copy {
