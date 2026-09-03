@@ -177,21 +177,26 @@
             '<img class="product-photo" src="' +
             base +
             item.image +
-            '" alt="" width="48" height="48">';
+            '" alt="" width="84" height="84">';
         } else {
           var mark = (item.brand || "M").trim();
           var initials = mark.length <= 3 ? mark : mark.split(/\s+/).map(function (w) { return w.charAt(0); }).join("").slice(0, 3);
           thumb = '<span class="product-mark" aria-hidden="true">' + initials + "</span>";
         }
+        var why = item.why || item.note || "";
+        var brandLine = item.brand
+          ? '<span class="product-brand">' + item.brand + "</span>"
+          : "";
         a.innerHTML =
           thumb +
           '<span class="product-copy">' +
+          brandLine +
           '<span class="product-name">' +
           item.name +
           "</span>" +
-          '<span class="product-note">' +
-          (item.note || item.brand || "") +
-          "</span>" +
+          (why
+            ? '<span class="product-why">' + why + "</span>"
+            : "") +
           "</span>" +
           EXT_ARROW;
         nav.appendChild(a);

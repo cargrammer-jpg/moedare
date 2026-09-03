@@ -5,28 +5,28 @@ window.MOEDARE_SHOP = {
       asin: "B0779KCS7D",
       brand: "P&S",
       name: "Bead Maker",
-      note: "Spray sealant. Drying aid.",
+      why: "Last step after every wash. Water beads clean off. Paint stays slick without a full ceramic job.",
       image: "img/bead-maker.jpg"
     },
     {
       asin: "B07TWB37S1",
       brand: "SINLAND",
       name: "Microfiber towels",
-      note: "16×24, six pack.",
+      why: "Soft on clear coat. I keep a stack in the boot. No cheap lint on the Z4.",
       image: "img/microfiber.jpg"
     },
     {
       asin: "B09QXRD4XW",
       brand: "MTM Hydro",
       name: "Acqualine nozzle",
-      note: "40° 4.0, rubber guard.",
+      why: "Honest 40° fan. Does not chew paint. Rubber guard is the bit I trust.",
       image: "img/nozzle.jpg"
     },
     {
       asin: "B083QTGTBM",
       brand: "MTM Hydro",
       name: "Foam cannon",
-      note: "Wand and bottle.",
+      why: "Thick foam first. Dirt lifts before the mitt. Fewer scratches on wash day.",
       image: "img/foam-cannon.jpg"
     }
   ]
