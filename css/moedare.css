@@ -110,11 +110,11 @@ body.has-photo::before {
     linear-gradient(180deg, rgba(14, 15, 18, 0.48) 0%, rgba(14, 15, 18, 0.58) 45%, rgba(14, 15, 18, 0.68) 100%);
 }
 
-/* Mobile: contain = full bay visible (zoomed out), no crop parallax */
+/* Mobile: cover the viewport — no letterbox bars */
 @media (max-width: 799px) {
   body.has-photo .page-bg {
-    background-size: contain;
-    background-position: center center;
+    background-size: cover;
+    background-position: center 40%;
   }
 }
 
