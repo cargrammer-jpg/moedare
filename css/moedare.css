@@ -89,6 +89,12 @@ body.has-bg::before {
   opacity: 1;
 }
 
+/* Brighter garage photo needs a heavier veil for card contrast */
+body.has-photo::before {
+  background:
+    linear-gradient(180deg, rgba(14, 15, 18, 0.78) 0%, rgba(14, 15, 18, 0.86) 45%, rgba(14, 15, 18, 0.92) 100%);
+}
+
 body.has-bg .profile-card,
 body.has-bg .social-card,
 body.has-bg .product-card {
