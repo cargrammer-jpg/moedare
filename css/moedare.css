@@ -686,3 +686,40 @@ img {
     transform: none;
   }
 }
+
+
+/* Soft site footer */
+.site-footer {
+  width: 100%;
+  max-width: 21rem;
+  margin: 0.25rem auto 0;
+  padding: 0.15rem 0.25rem 0.5rem;
+  text-align: center;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: #8B929E;
+}
+
+.site-footer a {
+  color: #C4C9D1;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.site-footer a:hover,
+.site-footer a:focus-visible {
+  color: var(--ink);
+}
+
+.page-shop .site-footer,
+.page-home .site-footer {
+  max-width: none;
+}
+
+@media (min-width: 800px) {
+  .site-footer {
+    grid-column: 1 / -1;
+    max-width: none;
+    margin-top: 0.5rem;
+  }
+}

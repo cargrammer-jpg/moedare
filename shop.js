@@ -1,3 +1,4 @@
+/** Affiliate tag moedare-20. Amazon OneLink (Associates Central) geo-routes these amazon.com links. */
 window.MOEDARE_SHOP = {
   tag: "moedare-20",
   items: [
