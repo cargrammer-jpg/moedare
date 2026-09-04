@@ -61,16 +61,24 @@ body::before {
 }
 
 
-/* Full-bleed photo background (file lands at img/bg.jpg when ALX sends it) */
+/* Full-bleed photo — fixed viewport layer, never scrolls with content */
 .page-bg {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  height: 100dvh;
   z-index: -2;
   pointer-events: none;
   background-color: var(--page);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: scroll;
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 body.has-photo .page-bg {
@@ -78,37 +86,45 @@ body.has-photo .page-bg {
 }
 
 body.has-bg::before {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   inset: 0;
+  width: 100%;
+  height: 100%;
+  height: 100dvh;
   z-index: -1;
   background:
     linear-gradient(180deg, rgba(14, 15, 18, 0.72) 0%, rgba(14, 15, 18, 0.82) 55%, rgba(14, 15, 18, 0.9) 100%),
     radial-gradient(ellipse at 20% 10%, rgba(90, 110, 140, 0.16), transparent 50%),
     radial-gradient(ellipse at 85% 90%, rgba(180, 90, 40, 0.08), transparent 46%);
-  animation: none;
-  transform: none;
+  animation: none !important;
+  transform: translateZ(0);
   opacity: 1;
 }
 
-/* Garage photo veil — a touch lighter so the bay reads through */
+/* Lighter veil so more of the garage shows through */
 body.has-photo::before {
   background:
-    linear-gradient(180deg, rgba(14, 15, 18, 0.62) 0%, rgba(14, 15, 18, 0.72) 45%, rgba(14, 15, 18, 0.8) 100%);
+    linear-gradient(180deg, rgba(14, 15, 18, 0.48) 0%, rgba(14, 15, 18, 0.58) 45%, rgba(14, 15, 18, 0.68) 100%);
 }
 
-/* Mobile: zoom out so more of the garage fits the tall frame */
+/* Mobile: contain = full bay visible (zoomed out), no crop parallax */
 @media (max-width: 799px) {
   body.has-photo .page-bg {
-    background-size: 100% auto;
-    background-position: center 42%;
+    background-size: contain;
+    background-position: center center;
   }
 }
 
+/* Solid cards — no backdrop-filter (that made the photo look like it scrolled) */
 body.has-bg .profile-card,
 body.has-bg .social-card,
 body.has-bg .product-card {
-  background: rgba(24, 26, 31, 0.88);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(24, 26, 31, 0.94);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
 @keyframes glow {
