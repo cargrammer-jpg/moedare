@@ -89,10 +89,18 @@ body.has-bg::before {
   opacity: 1;
 }
 
-/* Brighter garage photo needs a heavier veil for card contrast */
+/* Garage photo veil — a touch lighter so the bay reads through */
 body.has-photo::before {
   background:
-    linear-gradient(180deg, rgba(14, 15, 18, 0.78) 0%, rgba(14, 15, 18, 0.86) 45%, rgba(14, 15, 18, 0.92) 100%);
+    linear-gradient(180deg, rgba(14, 15, 18, 0.62) 0%, rgba(14, 15, 18, 0.72) 45%, rgba(14, 15, 18, 0.8) 100%);
+}
+
+/* Mobile: zoom out so more of the garage fits the tall frame */
+@media (max-width: 799px) {
+  body.has-photo .page-bg {
+    background-size: 100% auto;
+    background-position: center 42%;
+  }
 }
 
 body.has-bg .profile-card,
