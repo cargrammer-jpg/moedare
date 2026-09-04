@@ -4,20 +4,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>MOEDARE</title>
-  <meta name="description" content="ALX / MOEDARE. Garage kit I actually use. Old-school analog sports cars. Sweden.">
+  <meta name="description" content="ALX / MOEDARE. My only weakness is for old-school analog sports cars. Sweden.">
   <meta name="theme-color" content="#0E0F12">
   <meta name="color-scheme" content="dark">
   <link rel="canonical" href="https://moedare.com/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="MOEDARE">
   <meta property="og:title" content="MOEDARE">
-  <meta property="og:description" content="Garage kit I actually use. My only weakness is for old-school analog sports cars.">
+  <meta property="og:description" content="My only weakness is for old-school analog sports cars.">
   <meta property="og:url" content="https://moedare.com/">
   <meta property="og:locale" content="en_GB">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@MOEDARE">
   <meta name="twitter:title" content="MOEDARE">
-  <meta name="twitter:description" content="Garage kit I actually use. My only weakness is for old-school analog sports cars.">
+  <meta name="twitter:description" content="My only weakness is for old-school analog sports cars.">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -40,8 +40,9 @@
     }
   </script>
 </head>
-<body>
-  <div class="page page-home">
+<body class="has-bg">
+  <div class="page-bg" aria-hidden="true"></div>
+  <div class="page">
     <aside class="profile-card">
       <div class="avatar" data-avatar="avatar.jpg">
         <span class="avatar-mono" aria-hidden="true">M</span>
@@ -50,25 +51,15 @@
       <p class="handle">@MOEDARE</p>
       <p class="location">Sweden</p>
       <p class="bio">My only weakness is for old-school analog sports cars.</p>
+      <a class="btn-primary" href="shop.html">Shop</a>
     </aside>
 
-    <div class="main-col">
-      <section class="shop-block" aria-labelledby="shop-heading">
-        <p class="section-kicker">Garage kit</p>
-        <h2 class="section-title" id="shop-heading">What I use on the car</h2>
-        <p class="section-lead">Not a wishlist. These stay in the boot and earn their place on wash day. More kit coming.</p>
-        <nav class="shop-list" data-shop aria-label="Shop"></nav>
-        <p class="shop-disclosure">As an Amazon Associate I earn from qualifying purchases.</p>
-      </section>
-
-      <section class="links-block" aria-labelledby="links-heading">
-        <h2 class="links-heading" id="links-heading">Elsewhere</h2>
-        <nav class="socials" data-socials aria-label="Social links"></nav>
-      </section>
-    </div>
+    <section class="links-col">
+      <h2 class="links-heading">Social links</h2>
+      <nav class="socials" data-socials aria-label="Social links"></nav>
+    </section>
   </div>
 
-  <script src="shop.js"></script>
   <script src="socials.js"></script>
   <script src="js/site.js"></script>
 </body>

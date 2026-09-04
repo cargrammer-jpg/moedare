@@ -60,6 +60,43 @@ body::before {
   animation: glow 14s ease-in-out infinite alternate;
 }
 
+
+/* Full-bleed photo background (file lands at img/bg.jpg when ALX sends it) */
+.page-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background-color: var(--page);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+body.has-photo .page-bg {
+  background-image: url("../img/bg.jpg");
+}
+
+body.has-bg::before {
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(180deg, rgba(14, 15, 18, 0.72) 0%, rgba(14, 15, 18, 0.82) 55%, rgba(14, 15, 18, 0.9) 100%),
+    radial-gradient(ellipse at 20% 10%, rgba(90, 110, 140, 0.16), transparent 50%),
+    radial-gradient(ellipse at 85% 90%, rgba(180, 90, 40, 0.08), transparent 46%);
+  animation: none;
+  transform: none;
+  opacity: 1;
+}
+
+body.has-bg .profile-card,
+body.has-bg .social-card,
+body.has-bg .product-card {
+  background: rgba(24, 26, 31, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
 @keyframes glow {
   from { transform: translate3d(0, 0, 0) scale(1); opacity: 0.85; }
   to { transform: translate3d(-3%, 2%, 0) scale(1.08); opacity: 1; }
@@ -106,7 +143,7 @@ img {
   gap: 1.5rem;
 }
 
-.page-home {
+.page-shop {
   max-width: 54rem;
   gap: 1.75rem;
 }
@@ -551,7 +588,7 @@ img {
       max(2rem, env(safe-area-inset-left, 0px));
   }
 
-  .page-home {
+  .page-shop {
     grid-template-columns: 17rem minmax(0, 32rem);
     max-width: 54rem;
     gap: 2rem;
