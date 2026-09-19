@@ -17,17 +17,17 @@ window.MOEDARE_SHOP = {
       image: "img/microfiber.jpg"
     },
     {
-      asin: "B09QXRD4XW",
-      brand: "MTM Hydro",
-      name: "Acqualine nozzle",
-      why: "Honest 40° fan. Does not chew paint. Rubber guard is the bit I trust.",
+      asin: "B0BQZ2DGPP",
+      brand: "McKillans",
+      name: "40° nozzle",
+      why: "Honest 40° fan for rinse work. Stainless tip. Fits a standard 1/4 inch quick connect.",
       image: "img/nozzle.jpg"
     },
     {
-      asin: "B083QTGTBM",
-      brand: "MTM Hydro",
+      asin: "B0G4PMLSPW",
+      brand: "BEAR FORCE",
       name: "Foam cannon",
-      why: "Thick foam first. Dirt lifts before the mitt. Fewer scratches on wash day.",
+      why: "Thick snow foam before the mitt. Dirt lifts first. Fewer scratches on wash day.",
       image: "img/foam-cannon.jpg"
     },
     {
