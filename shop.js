@@ -31,10 +31,10 @@ window.MOEDARE_SHOP = {
       image: "img/foam-cannon.jpg"
     },
     {
-      asin: "B0C8X38773",
-      brand: "VIKING",
+      asin: "B09K4RCY7Q",
+      brand: "Chemical Guys",
       name: "Wash mitts",
-      why: "Two-pack, foam core. Holds soap so I dip less. Soft pile on clear coat.",
+      why: "Two-pack chenille. Holds soap so I dip less. Soft pile on clear coat.",
       image: "img/wash-mitt.jpg"
     }
   ]
