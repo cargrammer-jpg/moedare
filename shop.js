@@ -31,10 +31,10 @@ window.MOEDARE_SHOP = {
       image: "img/foam-cannon.jpg"
     },
     {
-      asin: "B09K4RCY7Q",
-      brand: "Chemical Guys",
-      name: "Wash mitts",
-      why: "Two-pack chenille. Holds soap so I dip less. Soft pile on clear coat.",
+      asin: "B09T24PW6Q",
+      brand: "Autoglym",
+      name: "Wash mitt",
+      why: "Plush microfiber noodles. Holds soap so I dip less. Soft on clear coat.",
       image: "img/wash-mitt.jpg"
     }
   ]
