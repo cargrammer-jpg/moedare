@@ -24,17 +24,17 @@ window.MOEDARE_SHOP = {
       image: "img/nozzle.jpg"
     },
     {
-      asin: "B0G4PMLSPW",
-      brand: "BEAR FORCE",
+      asin: "B07TWFS61H",
+      brand: "Amazon Basics",
       name: "Foam cannon",
-      why: "Thick snow foam before the mitt. Dirt lifts first. Fewer scratches on wash day.",
+      why: "Snow foam before the mitt. 1/4 inch quick connect. Dirt lifts first.",
       image: "img/foam-cannon.jpg"
     },
     {
-      asin: "B09T24PW6Q",
-      brand: "Autoglym",
-      name: "Wash mitt",
-      why: "Plush microfiber noodles. Holds soap so I dip less. Soft on clear coat.",
+      asin: "B0711KTX4N",
+      brand: "Amazon Basics",
+      name: "Wash mitts",
+      why: "Two grey microfiber mitts. Scratch-free pile. Elastic cuff stays put.",
       image: "img/wash-mitt.jpg"
     }
   ]
