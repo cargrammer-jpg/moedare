@@ -87,6 +87,11 @@ body::before {
 
 body.has-photo .page-bg {
   background-image: url("../img/bg.jpg");
+  background-image: image-set(
+    url("../img/bg-1280.webp") type("image/webp") 1x,
+    url("../img/bg-1920.webp") type("image/webp") 2x,
+    url("../img/bg.jpg") type("image/jpeg") 1x
+  );
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -120,6 +125,12 @@ body.has-photo::before {
 /* Same cover on every breakpoint — no letterbox bars */
 @media (max-width: 799px) {
   body.has-photo .page-bg {
+    background-image: url("../img/bg.jpg");
+    background-image: image-set(
+      url("../img/bg-1280.webp") type("image/webp") 1x,
+      url("../img/bg-1280.webp") type("image/webp") 2x,
+      url("../img/bg.jpg") type("image/jpeg") 1x
+    );
     background-size: cover;
     background-position: center 40%;
   }
@@ -171,6 +182,10 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+.page > main {
+  display: contents;
 }
 
 .page {
@@ -352,7 +367,8 @@ img {
   font-weight: 650;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: #C4C9D1;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85);
 }
 
 .socials {
@@ -360,6 +376,8 @@ img {
   flex-direction: column;
   gap: 10px;
   width: 100%;
+  /* Six live cards, 72px each, 10px gap. TikTok is hidden until it has a URL. */
+  min-height: calc(6 * 72px + 5 * 10px);
 }
 
 .social-card {
@@ -512,9 +530,16 @@ img {
   overflow: hidden;
 }
 
-.product-photo {
+.product-card picture {
+  display: block;
   width: 72px;
   height: 72px;
+  flex-shrink: 0;
+}
+
+.product-photo {
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   background: #F3F4F6;
   border-radius: 0.75rem;
@@ -561,7 +586,8 @@ img {
   margin: 1rem 0 0;
   font-size: 0.75rem;
   line-height: 1.45;
-  color: #6B7280;
+  color: #C4C9D1;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85);
 }
 
 .product-card .ext-arrow {
@@ -574,7 +600,8 @@ img {
   transform: translate(2px, -2px);
 }
 
-/* ——— Coming soon / empty states ——— 
+/* Coming soon / empty states */
+
 
 .coming-card {
   background: var(--card);
@@ -667,7 +694,7 @@ img {
     gap: 1.15rem;
   }
 
-  .product-photo,
+  .product-card picture,
   .product-mark {
     width: 84px;
     height: 84px;
@@ -697,7 +724,8 @@ img {
   text-align: center;
   font-size: 0.75rem;
   line-height: 1.5;
-  color: #8B929E;
+  color: #C4C9D1;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85);
 }
 
 .site-footer a {

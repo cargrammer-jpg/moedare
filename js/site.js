@@ -92,19 +92,32 @@
     }
   }
 
+  function hideMono(box) {
+    var mono = box.querySelector(".avatar-mono");
+    if (mono) mono.hidden = true;
+  }
+
   function loadAvatar(rootEl) {
-    var box = rootEl.querySelector("[data-avatar]");
-    if (!box) return;
-    var src = box.getAttribute("data-avatar") || "avatar.jpg";
-    var img = new Image();
-    img.className = "avatar-photo";
-    img.alt = "ALX";
-    img.onload = function () {
-      var mono = box.querySelector(".avatar-mono");
-      if (mono) mono.hidden = true;
-      box.appendChild(img);
-    };
-    img.src = src;
+    rootEl.querySelectorAll(".avatar").forEach(function (box) {
+      var existing = box.querySelector(".avatar-photo");
+      if (existing) {
+        if (existing.complete && existing.naturalWidth > 0) hideMono(box);
+        else existing.addEventListener("load", function () { hideMono(box); });
+        return;
+      }
+      var src = box.getAttribute("data-avatar");
+      if (!src) return;
+      var img = new Image();
+      img.className = "avatar-photo";
+      img.alt = "ALX";
+      img.width = 350;
+      img.height = 350;
+      img.onload = function () {
+        hideMono(box);
+        box.appendChild(img);
+      };
+      img.src = src;
+    });
   }
 
   function renderSocials() {
@@ -131,7 +144,6 @@
         a.href = href;
         a.target = "_blank";
         a.rel = "noopener noreferrer";
-        a.setAttribute("aria-label", action + " (" + handle + ")");
         a.innerHTML =
           '<span class="social-logo">' +
           (brand ? brand.logo : "") +
@@ -169,15 +181,17 @@
         a.href = shopHref(item.asin, tag);
         a.target = "_blank";
         a.rel = "nofollow sponsored noopener noreferrer";
-        a.setAttribute("aria-label", item.name + " on Amazon");
         var base = window.MOEDARE_BASE || "";
         var thumb;
         if (item.image) {
+          var src = base + item.image;
+          var webp = /\.webp$/i.test(src) ? src : src.replace(/\.jpe?g$/i, ".webp");
+          var jpeg = /\.webp$/i.test(src) ? src.replace(/\.webp$/i, ".jpg") : src;
           thumb =
-            '<img class="product-photo" src="' +
-            base +
-            item.image +
-            '" alt="" width="84" height="84">';
+            '<picture>' +
+            '<source type="image/webp" srcset="' + webp + '">' +
+            '<img class="product-photo" src="' + jpeg + '" alt="" width="84" height="84" decoding="async">' +
+            '</picture>';
         } else {
           var mark = (item.brand || "M").trim();
           var initials = mark.length <= 3 ? mark : mark.split(/\s+/).map(function (w) { return w.charAt(0); }).join("").slice(0, 3);

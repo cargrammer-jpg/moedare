@@ -13,6 +13,7 @@
   <link rel="icon" href="../favicon.ico" sizes="any">
   <link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="preload" as="image" href="../avatar-350.webp" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="../css/moedare.css">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-K42WV6J95P"></script>
   <script>
@@ -25,9 +26,14 @@
 <body class="has-bg has-photo">
   <div class="page-bg" aria-hidden="true"></div>
   <div class="page page-shop">
+    <main>
     <aside class="profile-card">
-      <div class="avatar" data-avatar="../avatar.jpg">
+      <div class="avatar">
         <span class="avatar-mono" aria-hidden="true">M</span>
+        <picture>
+          <source type="image/webp" srcset="../avatar-350.webp">
+          <img class="avatar-photo" src="../avatar-350.jpg" alt="ALX" width="350" height="350" fetchpriority="high">
+        </picture>
       </div>
       <h1 class="name">ALX</h1>
       <p class="handle">@MOEDARE</p>
@@ -42,9 +48,13 @@
         <h2 class="section-title" id="shop-heading">What I use on the car</h2>
         <p class="section-lead">Not a wishlist. These stay in the boot and earn their place on wash day. More kit coming.</p>
         <nav class="shop-list" data-shop aria-label="Garage kit"></nav>
+        <script>window.MOEDARE_BASE = "../";</script>
+        <script src="../shop.js"></script>
+        <script src="../js/site.js"></script>
         <p class="shop-disclosure">As an Amazon Associate I earn from qualifying purchases. Links use Amazon OneLink where enabled, so visitors land on their local store.</p>
       </section>
     </div>
+    </main>
 
     <footer class="site-footer">
       <p>Sweden. As an Amazon Associate I earn from qualifying purchases.</p>
@@ -52,8 +62,5 @@
     </footer>
   </div>
 
-  <script>window.MOEDARE_BASE = "../";</script>
-  <script src="../shop.js"></script>
-  <script src="../js/site.js"></script>
 </body>
 </html>
