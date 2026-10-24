@@ -26,6 +26,7 @@
   <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
+  <link rel="preload" as="image" href="avatar-350.webp" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="css/moedare.css">
   <script type="application/ld+json">
     {
@@ -55,9 +56,14 @@
 <body class="has-bg has-photo">
   <div class="page-bg" aria-hidden="true"></div>
   <div class="page">
+    <main>
     <aside class="profile-card">
-      <div class="avatar" data-avatar="avatar.jpg">
+      <div class="avatar">
         <span class="avatar-mono" aria-hidden="true">M</span>
+        <picture>
+          <source type="image/webp" srcset="avatar-350.webp">
+          <img class="avatar-photo" src="avatar-350.jpg" alt="ALX" width="350" height="350" fetchpriority="high">
+        </picture>
       </div>
       <h1 class="name">ALX</h1>
       <p class="handle">@MOEDARE</p>
@@ -70,6 +76,7 @@
       <h2 class="links-heading">Social links</h2>
       <nav class="socials" data-socials aria-label="Social links"></nav>
     </section>
+    </main>
 
     <footer class="site-footer">
       <p>Sweden. As an Amazon Associate I earn from qualifying purchases.</p>
@@ -77,7 +84,7 @@
     </footer>
   </div>
 
-  <script src="socials.js"></script>
-  <script src="js/site.js"></script>
+  <script src="socials.js" defer></script>
+  <script src="js/site.js" defer></script>
 </body>
 </html>
