@@ -739,6 +739,73 @@ img {
   color: var(--ink);
 }
 
+/* Sponsor: Motorpuls logo on a small dark plate so it reads over the garage photo */
+.sponsor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0 0 1rem;
+}
+
+.site-footer .sponsor-label {
+  margin: 0;
+  font-size: 0.6875rem;
+  font-weight: 650;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #C4C9D1;
+}
+
+.site-footer .sponsor-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.15rem;
+  border: 1px solid var(--line);
+  border-radius: 0.85rem;
+  background: rgba(14, 15, 18, 0.94);
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  transition: border-color var(--ease), box-shadow var(--ease), transform var(--ease);
+}
+
+.sponsor-logo {
+  display: block;
+  height: 1.1rem;
+  width: auto;
+}
+
+.site-footer .sponsor-link:hover {
+  border-color: #3F4652;
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-1px);
+}
+
+.site-footer .sponsor-link:focus-visible {
+  border-color: #3F4652;
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+@media (min-width: 800px) {
+  .sponsor-logo {
+    height: 1.2rem;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
 .page-shop .site-footer,
 .page-home .site-footer {
   max-width: none;
