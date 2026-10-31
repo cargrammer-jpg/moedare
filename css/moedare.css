@@ -758,6 +758,10 @@ img {
 }
 
 .site-footer .sponsor-link {
+  --sponsor-orange: 255 91 31; /* Motorpuls --pulse #FF5B1F */
+  --sponsor-ease: cubic-bezier(0.2, 0.8, 0.2, 1); /* Motorpuls --ease */
+  position: relative;
+  isolation: isolate;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -767,7 +771,37 @@ img {
   background: rgba(14, 15, 18, 0.94);
   box-shadow: var(--shadow);
   text-decoration: none;
-  transition: border-color var(--ease), box-shadow var(--ease), transform var(--ease);
+  transition: border-color 0.45s var(--sponsor-ease), transform 0.45s var(--sponsor-ease);
+}
+
+/* Orange glow behind the plate, borrowed from the Motorpuls article cards
+   (.lead a / .pop__frame: 0 40px 80px -40px rgb(255 91 31 / .25)).
+   Two glow layers that only change opacity and transform, so it stays on the compositor. */
+.site-footer .sponsor-link::before,
+.site-footer .sponsor-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+/* Resting glow: always there, breathes slowly */
+.site-footer .sponsor-link::before {
+  box-shadow:
+    0 0 26px 3px rgb(var(--sponsor-orange) / 0.42),
+    0 18px 36px -12px rgb(var(--sponsor-orange) / 0.6);
+  opacity: 0.8;
+}
+
+/* Hover and focus glow: stronger, fades in */
+.site-footer .sponsor-link::after {
+  box-shadow:
+    0 0 36px 7px rgb(var(--sponsor-orange) / 0.55),
+    0 26px 50px -14px rgb(var(--sponsor-orange) / 0.75);
+  opacity: 0;
+  transition: opacity 0.45s var(--sponsor-ease);
 }
 
 .sponsor-logo {
@@ -776,16 +810,54 @@ img {
   width: auto;
 }
 
-.site-footer .sponsor-link:hover {
-  border-color: #3F4652;
-  box-shadow: var(--shadow-hover);
-  transform: translateY(-1px);
-}
-
 .site-footer .sponsor-link:focus-visible {
-  border-color: #3F4652;
+  border-color: rgb(var(--sponsor-orange) / 0.45);
   outline: 2px solid var(--ink);
   outline-offset: 3px;
+}
+
+.site-footer .sponsor-link:focus-visible::after {
+  opacity: 1;
+}
+
+@media (hover: hover) {
+  .site-footer .sponsor-link:hover {
+    border-color: rgb(var(--sponsor-orange) / 0.45);
+  }
+
+  .site-footer .sponsor-link:hover::after {
+    opacity: 1;
+  }
+}
+
+@keyframes sponsor-breathe {
+  from { opacity: 0.4; transform: scale(0.97); }
+  to { opacity: 1; transform: scale(1.03); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .site-footer .sponsor-link::before {
+    animation: sponsor-breathe 3.2s ease-in-out infinite alternate;
+  }
+
+  .site-footer .sponsor-link:focus-visible {
+    transform: translateY(-3px);
+  }
+
+  @media (hover: hover) {
+    .site-footer .sponsor-link:hover {
+      transform: translateY(-3px);
+    }
+  }
+}
+
+/* Reduced motion: static glow, no lift, no breathing */
+@media (prefers-reduced-motion: reduce) {
+  .site-footer .sponsor-link::before {
+    animation: none;
+    opacity: 0.8;
+    transform: none;
+  }
 }
 
 @media (min-width: 800px) {
