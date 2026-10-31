@@ -739,51 +739,59 @@ img {
   color: var(--ink);
 }
 
-/* Sponsor line: small dark pill so it stays readable over the garage photo */
+/* Sponsor: Motorpuls logo on a small dark plate so it reads over the garage photo */
 .sponsor {
-  display: inline-flex;
-  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 0.35rem;
-  margin: 0 0 0.85rem;
-  padding: 0.2rem 0.9rem;
-  min-block-size: 2.25rem;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: rgba(24, 26, 31, 0.94);
-  box-shadow: var(--shadow);
-  font-size: 0.8125rem;
-  line-height: 1.4;
-  text-shadow: none;
+  gap: 0.4rem;
+  margin: 0 0 1rem;
 }
 
-.sponsor-label {
-  color: var(--muted);
+.site-footer .sponsor-label {
+  margin: 0;
+  font-size: 0.6875rem;
+  font-weight: 650;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #C4C9D1;
 }
 
 .site-footer .sponsor-link {
-  display: inline-block;
-  padding-block: 0.3rem;
-  color: #FB923C;
-  font-weight: 650;
-  text-decoration: underline;
-  text-decoration-color: rgba(251, 146, 60, 0.45);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
-  transition: color var(--ease), text-decoration-color var(--ease);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.15rem;
+  border: 1px solid var(--line);
+  border-radius: 0.85rem;
+  background: rgba(14, 15, 18, 0.94);
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  transition: border-color var(--ease), box-shadow var(--ease), transform var(--ease);
 }
 
-.site-footer .sponsor-link:hover,
-.site-footer .sponsor-link:focus-visible {
-  color: #FDBA74;
-  text-decoration-color: currentColor;
+.sponsor-logo {
+  display: block;
+  height: 1.1rem;
+  width: auto;
+}
+
+.site-footer .sponsor-link:hover {
+  border-color: #3F4652;
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-1px);
 }
 
 .site-footer .sponsor-link:focus-visible {
-  outline: 2px solid #FDBA74;
+  border-color: #3F4652;
+  outline: 2px solid var(--ink);
   outline-offset: 3px;
-  border-radius: 4px;
+}
+
+@media (min-width: 800px) {
+  .sponsor-logo {
+    height: 1.2rem;
+  }
 }
 
 .visually-hidden {
