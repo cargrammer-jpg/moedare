@@ -144,6 +144,7 @@
         a.href = href;
         a.target = "_blank";
         a.rel = "noopener noreferrer";
+        if (id) a.setAttribute("data-umami-event", "link-" + id);
         a.innerHTML =
           '<span class="social-logo">' +
           (brand ? brand.logo : "") +
@@ -181,6 +182,8 @@
         a.href = shopHref(item.asin, tag);
         a.target = "_blank";
         a.rel = "nofollow sponsored noopener noreferrer";
+        a.setAttribute("data-umami-event", "garage-kit");
+        a.setAttribute("data-umami-event-asin", item.asin);
         var base = window.MOEDARE_BASE || "";
         var thumb;
         if (item.image) {
