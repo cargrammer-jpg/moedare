@@ -890,3 +890,61 @@ img {
     margin-top: 0.5rem;
   }
 }
+
+/* Home: single Garage kit entry above the social links */
+.gk-entry {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  width: 100%;
+  min-height: 4.25rem;
+  padding: 0.7rem 1.2rem 0.7rem 0.8rem;
+  background: rgba(24, 26, 31, 0.94);
+  border: 1px solid #3F4652;
+  border-radius: var(--radius);
+  color: var(--ink);
+  transition: border-color var(--ease), box-shadow var(--ease);
+}
+
+.gk-entry:hover,
+.gk-entry:focus-visible {
+  border-color: #5A6270;
+  box-shadow: var(--shadow-hover);
+  color: var(--ink);
+}
+
+.gk-entry-stack {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.gk-entry-stack img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  padding: 3px;
+  border-radius: 0.6rem;
+  background: #F3F4F6;
+  border: 2px solid #181A1F;
+}
+
+.gk-entry-stack img + img {
+  margin-left: -14px;
+}
+
+.gk-entry:hover .gk-chevron,
+.gk-entry:focus-visible .gk-chevron {
+  transform: translateX(2px);
+  color: var(--ink);
+}
+
+.gk-social-heading {
+  margin-top: 1.25rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gk-entry:hover .gk-chevron,
+  .gk-entry:focus-visible .gk-chevron {
+    transform: none;
+  }
+}
